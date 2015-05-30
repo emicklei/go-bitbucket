@@ -2,7 +2,6 @@ package bitbucket
 
 import (
 	"encoding/json"
-	"log"
 	"net/http"
 )
 
@@ -26,7 +25,6 @@ func (c *Client) RepositoriesDo(block func(Repository) error) error {
 	u := c.URLTo("/repositories", c.user)
 	next := u.String()
 	for {
-		log.Println("GET", next)
 		r, err := http.NewRequest("GET", next, nil)
 		r.Header.Set("Accept", "application/json")
 		if err != nil {
