@@ -6,6 +6,7 @@ MIT License, (c) 2015, http://ernestmicklei.com
 
 ### example
 
+```
   func main() {
     c := bitbucket.New("your-user-name", "its-password")
     err := c.RepositoriesDo(func(each bitbucket.Repository) error {
@@ -14,3 +15,4 @@ MIT License, (c) 2015, http://ernestmicklei.com
     })
     log.Println(err)
   }
+```
